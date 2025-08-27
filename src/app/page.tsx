@@ -175,12 +175,13 @@ export default function K2FanflexApp() {
 	}) => (
 		<motion.div whileHover={{ y: -4 }} transition={{ duration: 0.2 }}>
 			<Card className="overflow-hidden border-0 shadow-md hover:shadow-xl transition-all duration-300">
-				<div className="relative">
+				<div className="relative h-48 w-full">
 					<Image
-						fill
 						src={product.image || '/placeholder.svg'}
 						alt={product.name}
-						className="w-full h-48 object-cover"
+						fill
+						className="object-cover"
+						sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
 					/>
 					{product.badge && (
 						<Badge
@@ -579,13 +580,15 @@ export default function K2FanflexApp() {
 							initial={{ opacity: 0, x: 20 }}
 							animate={{ opacity: 1, x: 0 }}
 							transition={{ duration: 0.6, delay: 0.2 }}
-							className="relative"
+							className="relative h-[400px] w-full"
 						>
 							<Image
-								fill
 								src="/football-player-in-action-wearing-jersey-and-boots.png"
 								alt="Football player in action"
-								className="w-full h-auto rounded-2xl shadow-2xl"
+								fill
+								className="object-cover rounded-2xl shadow-2xl"
+								sizes="(max-width: 768px) 100vw, 50vw"
+								priority
 							/>
 						</motion.div>
 					</div>
@@ -668,12 +671,13 @@ export default function K2FanflexApp() {
 									className="flex-shrink-0 w-64 snap-start"
 								>
 									<Card className="overflow-hidden cursor-pointer hover:shadow-lg transition-shadow">
-										<div className="relative h-32">
+										<div className="relative h-32 w-full">
 											<Image
-												fill
 												src={category.image || '/placeholder.svg'}
 												alt={category.name}
-												className="w-full h-full object-cover"
+												fill
+												className="object-cover"
+												sizes="256px"
 											/>
 											<div className="absolute inset-0 bg-black/20" />
 											<div className="absolute inset-0 flex items-center justify-center">
@@ -700,12 +704,13 @@ export default function K2FanflexApp() {
 								whileHover={{ y: -4 }}
 							>
 								<Card className="overflow-hidden cursor-pointer hover:shadow-xl transition-all duration-300">
-									<div className="relative h-48">
+									<div className="relative h-48 w-full">
 										<Image
-											fill
 											src={category.image || '/placeholder.svg'}
 											alt={category.name}
-											className="w-full h-full object-cover"
+											fill
+											className="object-cover"
+											sizes="(max-width: 1200px) 50vw, 33vw"
 										/>
 										<div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
 										<div className="absolute bottom-4 left-4">
@@ -753,12 +758,15 @@ export default function K2FanflexApp() {
 								>
 									<Card className="p-6 h-full">
 										<div className="flex items-center gap-3 mb-4">
-											<Image
-												fill
-												src={testimonial.avatar || '/placeholder.svg'}
-												alt={testimonial.name}
-												className="w-12 h-12 rounded-full"
-											/>
+											<div className="relative w-12 h-12">
+												<Image
+													src={testimonial.avatar || '/placeholder.svg'}
+													alt={testimonial.name}
+													fill
+													className="rounded-full object-cover"
+													sizes="48px"
+												/>
+											</div>
 											<div>
 												<h4 className="font-semibold">{testimonial.name}</h4>
 												<div className="flex">
@@ -792,12 +800,15 @@ export default function K2FanflexApp() {
 							>
 								<Card className="p-6 h-full">
 									<div className="flex items-center gap-3 mb-4">
-										<Image
-											fill
-											src={testimonial.avatar || '/placeholder.svg'}
-											alt={testimonial.name}
-											className="w-12 h-12 rounded-full"
-										/>
+										<div className="relative w-12 h-12">
+											<Image
+												src={testimonial.avatar || '/placeholder.svg'}
+												alt={testimonial.name}
+												fill
+												className="rounded-full object-cover"
+												sizes="48px"
+											/>
+										</div>
 										<div>
 											<h4 className="font-semibold">{testimonial.name}</h4>
 											<div className="flex">
